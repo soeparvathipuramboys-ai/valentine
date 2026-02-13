@@ -109,7 +109,25 @@ button{
     <button class="yes" onclick="showMessage()">Yes 😍</button>
     <button class="no" id="noBtn">No 🙈</button>
 
-    <div id="msg" style="display:none;font-size:13px;margin-top:8px;">
+ <div id="loveScreen" style="
+  position:fixed;
+  inset:0;
+  background:linear-gradient(135deg,#ff9bb3,#ffdde7);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  font-family:'Comic Sans MS', cursive;
+  opacity:0;
+  pointer-events:none;
+  transition:0.6s;
+  z-index:10;
+">
+  <div style="max-width:600px; padding:20px;">
+    <h1 style="font-size:32px;">💖 Jessica 💖</h1>
+
+    <p style="font-size:16px; line-height:1.6;">
 Hi baby my dear esposa Jessica ❤️ <br><br>
 When I met u , u r the pure soul n pure heart that I ever met .
 U gave me all the love i never seen in my life ❤️.
@@ -123,9 +141,10 @@ I LOVE YOU SO MUCH MY BUJII 💋🦁<br>
 Thank you my dear wifey Jessica ❣️💋<br><br>
 
 — Ricky 💖
-    </div>
+    </p>
   </div>
 </div>
+
 
 <audio id="music" loop preload="auto">
   <source src="ricky.mp3" type="audio/mp3">
