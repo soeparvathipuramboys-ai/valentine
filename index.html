@@ -160,23 +160,23 @@ env.onclick=()=>{
 };
 
 function showMessage(){
- const msg = document.getElementById("msg");
- msg.style.display="block";
- msg.style.transform="scale(1.1)";
- msg.style.transition="0.5s";
+  const screen = document.getElementById("loveScreen");
+  screen.style.opacity = "1";
+  screen.style.pointerEvents = "auto";
 
- for(let i=0;i<25;i++){
-   const heart=document.createElement("div");
-   heart.innerHTML="💖";
-   heart.style.position="fixed";
-   heart.style.left=Math.random()*100+"vw";
-   heart.style.top=Math.random()*100+"vh";
-   heart.style.fontSize="24px";
-   heart.style.animation="fadeOut 2s forwards";
-   document.body.appendChild(heart);
-   setTimeout(()=>heart.remove(),2000);
- }
+  for(let i=0;i<40;i++){
+    const heart=document.createElement("div");
+    heart.innerHTML="💖";
+    heart.style.position="fixed";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.top=Math.random()*100+"vh";
+    heart.style.fontSize="26px";
+    heart.style.animation="fadeOut 2s forwards";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),2000);
+  }
 }
+
 
 const noBtn=document.getElementById("noBtn");
 noBtn.addEventListener("mouseover",()=>{
