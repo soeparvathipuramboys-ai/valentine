@@ -72,6 +72,12 @@ button{
 .yes{background:#ff6b81;color:white;}
 .no{background:#ddd;position:relative;}
 </style>
+@keyframes fadeOut{
+  to{
+    transform: scale(2);
+    opacity:0;
+  }
+}
 </head>
 
 <body>
@@ -110,8 +116,25 @@ const env=document.getElementById("env");
 env.onclick=()=>env.classList.toggle("open");
 
 function showMessage(){
- document.getElementById("msg").style.display="block";
+ const msg = document.getElementById("msg");
+ msg.style.display="block";
+ msg.style.transform="scale(1.1)";
+ msg.style.transition="0.5s";
+
+ // hearts burst
+ for(let i=0;i<25;i++){
+   const heart=document.createElement("div");
+   heart.innerHTML="💖";
+   heart.style.position="fixed";
+   heart.style.left=Math.random()*100+"vw";
+   heart.style.top=Math.random()*100+"vh";
+   heart.style.fontSize="24px";
+   heart.style.animation="fadeOut 2s forwards";
+   document.body.appendChild(heart);
+   setTimeout(()=>heart.remove(),2000);
+ }
 }
+
 
 const noBtn=document.getElementById("noBtn");
 noBtn.addEventListener("mouseover",()=>{
