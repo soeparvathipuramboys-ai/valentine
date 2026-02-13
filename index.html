@@ -5,12 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jessica ❤️</title>
 
-@keyframes fadeOut{
-  to{
-    transform: scale(2);
-    opacity:0;
-  }
-}
 <style>
 body{
   margin:0;
@@ -77,8 +71,29 @@ button{
 }
 .yes{background:#ff6b81;color:white;}
 .no{background:#ddd;position:relative;}
-</style>
 
+/* burst hearts animation */
+@keyframes fadeOut{
+  to{
+    transform: scale(2);
+    opacity:0;
+  }
+}
+
+/* floating hearts */
+.heart {
+  position: fixed;
+  bottom: -10px;
+  font-size: 24px;
+  animation: floatUp 5s linear infinite;
+}
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -112,13 +127,18 @@ Thank you my dear wifey Jessica ❣️💋<br><br>
   </div>
 </div>
 
+<audio id="music" loop preload="auto">
+  <source src="ricky.mp3" type="audio/mp3">
+</audio>
+
 <script>
 const env=document.getElementById("env");
+const music=document.getElementById("music");
+
 env.onclick=()=>{
   env.classList.toggle("open");
-  document.getElementById("music").play();
+  music.play().catch(()=>{}); // prevents autoplay error
 };
-
 
 function showMessage(){
  const msg = document.getElementById("msg");
@@ -126,7 +146,6 @@ function showMessage(){
  msg.style.transform="scale(1.1)";
  msg.style.transition="0.5s";
 
- // hearts burst
  for(let i=0;i<25;i++){
    const heart=document.createElement("div");
    heart.innerHTML="💖";
@@ -140,35 +159,13 @@ function showMessage(){
  }
 }
 
-
 const noBtn=document.getElementById("noBtn");
 noBtn.addEventListener("mouseover",()=>{
  const x=Math.random()*200-100;
  const y=Math.random()*200-100;
  noBtn.style.transform=`translate(${x}px,${y}px)`;
 });
-</script>
 
-<audio id="music" loop>
-  <source src="ricky-love.mpeg" type="audio/mpeg">
-</audio>
-
-<style>
-.heart {
-  position: fixed;
-  bottom: -10px;
-  font-size: 24px;
-  animation: floatUp 5s linear infinite;
-}
-@keyframes floatUp {
-  to {
-    transform: translateY(-110vh);
-    opacity: 0;
-  }
-}
-</style>
-
-<script>
 setInterval(() => {
   const heart = document.createElement("div");
   heart.className = "heart";
@@ -178,5 +175,6 @@ setInterval(() => {
   setTimeout(() => heart.remove(), 5000);
 }, 500);
 </script>
+
 </body>
 </html>
