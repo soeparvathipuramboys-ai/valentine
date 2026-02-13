@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jessica ❤️</title>
+
+<style>
+body{
+  margin:0;
+  font-family:"Comic Sans MS", cursive;
+  background: linear-gradient(135deg,#ffd1dc,#ffe6f0);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+}
+
+/* Envelope */
+.envelope{
+  position:relative;
+  width:320px;
+  height:200px;
+  background:#ff6b81;
+  border-radius:10px;
+  cursor:pointer;
+  box-shadow:0 15px 35px rgba(0,0,0,.2);
+}
+
+.flap{
+  position:absolute;
+  width:0;
+  height:0;
+  border-left:160px solid transparent;
+  border-right:160px solid transparent;
+  border-bottom:100px solid #ff8fa3;
+  top:-100px;
+  transition:.6s;
+}
+
+.open .flap{
+  transform:rotateX(180deg);
+  transform-origin:bottom;
+}
+
+.letter{
+  position:absolute;
+  background:white;
+  width:90%;
+  left:5%;
+  top:20px;
+  padding:15px;
+  border-radius:12px;
+  text-align:center;
+  opacity:0;
+  transform:translateY(40px);
+  transition:.6s;
+}
+
+.open .letter{
+  opacity:1;
+  transform:translateY(-60px);
+}
+
+button{
+  padding:10px 16px;
+  border:none;
+  border-radius:10px;
+  margin:6px;
+  cursor:pointer;
+}
+.yes{background:#ff6b81;color:white;}
+.no{background:#ddd;position:relative;}
+</style>
+</head>
+
+<body>
+
+<div class="envelope" id="env">
+  <div class="flap"></div>
+
+  <div class="letter">
+    <h3>Jessica ❤️</h3>
+    <p>Will you be my Valentine? 💖</p>
+
+    <button class="yes" onclick="showMessage()">Yes 😍</button>
+    <button class="no" id="noBtn">No 🙈</button>
+
+    <div id="msg" style="display:none;font-size:13px;margin-top:8px;">
+Hi baby my dear esposa Jessica ❤️ <br><br>
+When I met u , u r the pure soul n pure heart that I ever met .
+U gave me all the love i never seen in my life ❤️.
+U gave me the support when even my parents are not there for me to support.
+U r the best partner n everything to me .
+Am always happy with u smiling n laughing n dancing.
+We are happy together 1 year ❤️.<br><br>
+
+HAPPY VALENTINE'S DAY BABY LOVE 💗<br>
+I LOVE YOU SO MUCH MY BUJII 💋🦁<br>
+Thank you my dear wifey Jessica ❣️💋<br><br>
+
+— Ricky 💖
+    </div>
+  </div>
+</div>
+
+<script>
+const env=document.getElementById("env");
+env.onclick=()=>env.classList.toggle("open");
+
+function showMessage(){
+ document.getElementById("msg").style.display="block";
+}
+
+const noBtn=document.getElementById("noBtn");
+noBtn.addEventListener("mouseover",()=>{
+ const x=Math.random()*200-100;
+ const y=Math.random()*200-100;
+ noBtn.style.transform=`translate(${x}px,${y}px)`;
+});
+</script>
+
+</body>
+</html>
