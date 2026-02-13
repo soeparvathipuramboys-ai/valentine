@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jessica ❤️</title>
 
+@keyframes fadeOut{
+  to{
+    transform: scale(2);
+    opacity:0;
+  }
+}
 <style>
 body{
   margin:0;
@@ -72,12 +78,7 @@ button{
 .yes{background:#ff6b81;color:white;}
 .no{background:#ddd;position:relative;}
 </style>
-@keyframes fadeOut{
-  to{
-    transform: scale(2);
-    opacity:0;
-  }
-}
+
 </head>
 
 <body>
@@ -113,7 +114,11 @@ Thank you my dear wifey Jessica ❣️💋<br><br>
 
 <script>
 const env=document.getElementById("env");
-env.onclick=()=>env.classList.toggle("open");
+env.onclick=()=>{
+  env.classList.toggle("open");
+  document.getElementById("music").play();
+};
+
 
 function showMessage(){
  const msg = document.getElementById("msg");
